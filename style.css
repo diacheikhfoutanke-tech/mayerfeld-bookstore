@@ -1,0 +1,521 @@
+/* ================================
+   CSS CUSTOM PROPERTIES
+   ================================ */
+
+:root {
+  --color-background: #f8f5ef;
+  --color-surface: #ffffff;
+  --color-primary: #2f3e35;
+  --color-secondary: #8a6f4d;
+  --color-text: #2d2d2d;
+  --color-muted: #777777;
+  --color-border: #ded8ce;
+
+  --font-main: Arial, sans-serif;
+
+  --spacing-small: 0.5rem;
+  --spacing-medium: 1rem;
+  --spacing-large: 2rem;
+}
+
+/* ================================
+   GLOBAL RESET
+   ================================ */
+
+/* Make width and height calculations easier */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove default browser spacing */
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+/* Remove default link styling */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Remove default list styling */
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+   HEADER
+   ================================ */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1.25rem 5%;
+
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* Website logo */
+.logo a {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* Main navigation */
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Navigation links */
+nav a {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--color-text);
+
+  transition: color 0.2s ease;
+}
+
+/* Navigation hover effect */
+nav a:hover {
+  color: var(--color-secondary);
+}
+
+/* ================================
+   HERO SECTION
+   ================================ */
+
+.hero {
+  min-height: 70vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 4rem 5%;
+
+  text-align: center;
+}
+
+/* Hero content container */
+.hero-content {
+  max-width: 750px;
+}
+
+/* Main heading */
+.hero h1 {
+  margin: 0 0 1.5rem;
+
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 1.05;
+
+  color: var(--color-primary);
+}
+
+/* Hero description */
+.hero p {
+  max-width: 600px;
+
+  margin: 0 auto 2rem;
+
+  font-size: 1.1rem;
+  line-height: 1.7;
+
+  color: var(--color-muted);
+}
+
+/* Call-to-action button */
+.hero-button {
+  display: inline-block;
+
+  padding: 0.9rem 1.8rem;
+
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+
+  border-radius: 4px;
+
+  font-weight: 600;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* Button hover effect */
+.hero-button:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+}
+
+/* ================================
+   BOOKS SECTION
+   ================================ */
+
+.books-section {
+  padding: 5rem 5%;
+}
+
+/* Section headings */
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 3rem;
+}
+
+.section-heading h2 {
+  margin: 0 0 0.75rem;
+
+  font-size: 2.2rem;
+  color: var(--color-primary);
+}
+
+.section-heading p {
+  margin: 0;
+
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+/* Book category */
+.book-category {
+  margin-bottom: 4rem;
+}
+
+.book-category h3 {
+  margin: 0 0 1.5rem;
+
+  font-size: 1.4rem;
+  color: var(--color-primary);
+}
+
+/* Book grid */
+.book-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 2rem;
+}
+
+/* Individual book card */
+.book-card {
+  overflow: hidden;
+
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+/* Book card hover effect */
+.book-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Temporary book cover */
+.book-cover {
+  min-height: 280px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+
+  font-size: 0.85rem;
+}
+
+/* Book information */
+.book-info {
+  padding: 1.25rem;
+}
+
+.book-info h4 {
+  margin: 0 0 0.5rem;
+
+  font-size: 1.1rem;
+  color: var(--color-primary);
+}
+
+/* Author name */
+.author {
+  margin: 0 0 1rem;
+
+  color: var(--color-muted);
+}
+
+/* Book price */
+.price {
+  margin: 0;
+
+  font-weight: 700;
+  color: var(--color-secondary);
+}
+
+/* ================================
+   EVENTS SECTION
+   ================================ */
+
+.events-section {
+  padding: 5rem 5%;
+
+  background-color: var(--color-surface);
+}
+
+/* Events container */
+.events-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  max-width: 900px;
+}
+
+/* Individual event card */
+.event-card {
+  display: flex;
+  align-items: center;
+
+  gap: 2rem;
+
+  padding: 1.5rem;
+
+  border: 1px solid var(--color-border);
+}
+
+/* Event date */
+.event-date {
+  min-width: 80px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 0.75rem;
+
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* Event month */
+.event-date .month {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+/* Event day */
+.event-date .day {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* Event information */
+.event-info h3 {
+  margin: 0 0 0.5rem;
+
+  color: var(--color-primary);
+}
+
+.event-info p {
+  margin: 0 0 0.75rem;
+
+  line-height: 1.6;
+  color: var(--color-muted);
+}
+
+/* Event time */
+.event-time {
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  color: var(--color-secondary);
+}
+
+/* ================================
+   ABOUT SECTION
+   ================================ */
+
+.about-section {
+  padding: 5rem 5%;
+}
+
+/* About content */
+.about-content {
+  max-width: 750px;
+}
+
+/* About paragraphs */
+.about-content p {
+  margin: 0 0 1.25rem;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+
+  color: var(--color-muted);
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+
+footer {
+  padding: 3rem 5% 1.5rem;
+
+  background-color: var(--color-primary);
+  color: var(--color-surface);
+}
+
+/* Main footer content */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 2rem;
+
+  padding-bottom: 2rem;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Footer brand */
+.footer-brand {
+  max-width: 350px;
+}
+
+.footer-brand h2 {
+  margin: 0 0 0.75rem;
+}
+
+.footer-brand p {
+  margin: 0;
+
+  line-height: 1.6;
+
+  opacity: 0.8;
+}
+
+/* Footer navigation */
+.footer-content nav ul {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+
+  gap: 0.75rem;
+}
+
+.footer-content nav a {
+  color: var(--color-surface);
+
+  opacity: 0.85;
+
+  transition: opacity 0.2s ease;
+}
+
+/* Footer navigation hover effect */
+.footer-content nav a:hover {
+  opacity: 1;
+}
+
+/* Copyright */
+.footer-bottom {
+  padding-top: 1.5rem;
+
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+
+  font-size: 0.85rem;
+
+  opacity: 0.7;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+   ================================ */
+
+/* Tablet screens */
+@media (max-width: 900px) {
+  /* Reduce the number of book columns */
+  .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+  /* Stack header elements */
+  header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* Allow navigation links to wrap */
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  /* Reduce hero spacing */
+  .hero {
+    min-height: 60vh;
+    padding: 3rem 5%;
+  }
+
+  /* Make the heading smaller */
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  /* One book per row */
+  .book-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stack event information */
+  .event-card {
+    align-items: flex-start;
+  }
+
+  /* Stack footer content */
+  .footer-content {
+    flex-direction: column;
+  }
+}
+
+/* for images */
+
+.book-cover {
+  height: 320px;
+  overflow: hidden;
+  background-color: var(--color-primary);
+}
+
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
