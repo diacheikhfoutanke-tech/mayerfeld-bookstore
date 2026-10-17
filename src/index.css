@@ -1,0 +1,26 @@
+/* Load Tailwind CSS */
+@import "tailwindcss";
+
+/* Global styles */
+:root {
+  font-family: Arial, sans-serif;
+  color: #2d2d2d;
+  background-color: #f8f5ef;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Apply predictable sizing to every element */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove default body spacing */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
