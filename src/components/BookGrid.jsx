@@ -1,11 +1,23 @@
 import { useState } from "react";
 import books from "../data/books";
 import CategoryFilter from "./CategoryFilter";
-
+import QuantityStepper from "./QuantityStepper";
 // BookGrid component: displays and filters bookstore products
 function BookGrid() {
   // Store the currently selected category
   const [selectedCategory, setSelectedCategory] = useState("All");
+  // Store the selected quantity for each book
+  const [quantities, setQuantities] = useState(
+    Object.fromEntries(books.map((book) => [book.id, 1])),
+  );
+
+  // Update the quantity of a specific book
+  function handleQuantityChange(bookId, quantity) {
+    setQuantities((previousQuantities) => ({
+      ...previousQuantities,
+      [bookId]: quantity,
+    }));
+  }
 
   // Filter books according to the selected category
   const filteredBooks =
@@ -74,6 +86,13 @@ function BookGrid() {
                 <p className="mt-4 font-semibold text-[#b77945]">
                   ${book.price.toFixed(2)}
                 </p>
+
+                <QuantityStepper
+                  quantity={quantities[book.id]}
+                  onQuantityChange={(quantity) =>
+                    handleQuantityChange(book.id, quantity)
+                  }
+                />
               </div>
             </article>
           ))}
